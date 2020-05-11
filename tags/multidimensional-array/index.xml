@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Multidimensional Array on River's Notes</title><link>https://www.ryc.one/tags/multidimensional-array/</link><description>Recent content in Multidimensional Array on River's Notes</description><generator>Hugo -- gohugo.io</generator><managingEditor>river@ryc.one (River Yang)</managingEditor><webMaster>river@ryc.one (River Yang)</webMaster><lastBuildDate>Thu, 01 Jun 2017 15:58:02 +0800</lastBuildDate><atom:link href="https://www.ryc.one/tags/multidimensional-array/index.xml" rel="self" type="application/rss+xml"/><item><title>PowerShell - Multidimensional Arrays in PowerShell</title><link>https://www.ryc.one/2017-06-01-powershell-multidimensional-arrays-in-powershell/</link><pubDate>Thu, 01 Jun 2017 15:58:02 +0800</pubDate><author>river@ryc.one (River Yang)</author><guid>https://www.ryc.one/2017-06-01-powershell-multidimensional-arrays-in-powershell/</guid><description>&lt;p>You may have some arrays like this:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="nv">$year1&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">@()&lt;/span>
-&lt;span class="nv">$year1&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="s2">&amp;#34;Cindy&amp;#34;&lt;/span>
-&lt;span class="nv">$year1&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="s2">&amp;#34;Candy&amp;#34;&lt;/span>
-&lt;span class="nv">$year1&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="s2">&amp;#34;Mandy&amp;#34;&lt;/span>
-&lt;span class="nv">$year2&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">@()&lt;/span>
-&lt;span class="nv">$year2&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="s2">&amp;#34;Chris&amp;#34;&lt;/span>
-&lt;span class="nv">$year2&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="s2">&amp;#34;Green&amp;#34;&lt;/span>
-&lt;span class="nv">$year2&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="s2">&amp;#34;Richard&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Multidimensional Array - Tag - River's Notes</title><link>https://www.ryc.one/tags/multidimensional-array/</link><description>Multidimensional Array - Tag - River's Notes</description><generator>Hugo -- gohugo.io</generator><managingEditor>river@ryc.one (River Yang)</managingEditor><webMaster>river@ryc.one (River Yang)</webMaster><lastBuildDate>Thu, 01 Jun 2017 15:58:02 +0800</lastBuildDate><atom:link href="https://www.ryc.one/tags/multidimensional-array/" rel="self" type="application/rss+xml"/><item><title>PowerShell - Multidimensional Arrays in PowerShell</title><link>https://www.ryc.one/2017-06-01-powershell-multidimensional-arrays-in-powershell/</link><pubDate>Thu, 01 Jun 2017 15:58:02 +0800</pubDate><author>Author</author><guid>https://www.ryc.one/2017-06-01-powershell-multidimensional-arrays-in-powershell/</guid><description><![CDATA[<p>You may have some arrays like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="nv">$year1</span> <span class="p">=</span> <span class="p">@()</span>
+<span class="nv">$year1</span> <span class="p">+=</span> <span class="s2">&#34;Cindy&#34;</span>
+<span class="nv">$year1</span> <span class="p">+=</span> <span class="s2">&#34;Candy&#34;</span>
+<span class="nv">$year1</span> <span class="p">+=</span> <span class="s2">&#34;Mandy&#34;</span>
+<span class="nv">$year2</span> <span class="p">=</span> <span class="p">@()</span>
+<span class="nv">$year2</span> <span class="p">+=</span> <span class="s2">&#34;Chris&#34;</span>
+<span class="nv">$year2</span> <span class="p">+=</span> <span class="s2">&#34;Green&#34;</span>
+<span class="nv">$year2</span> <span class="p">+=</span> <span class="s2">&#34;Richard&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description></item></channel></rss>

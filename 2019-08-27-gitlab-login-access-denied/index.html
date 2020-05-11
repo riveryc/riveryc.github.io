@@ -1,0 +1,264 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Gitlab Login Access Denied - River's Notes</title><meta name=Description content="River's Notes"><meta property="og:title" content="Gitlab Login Access Denied"><meta property="og:description" content="Error message showing as below while trying to login to on prem gitlab:
+
+        
+    gitlab access denied"><meta property="og:type" content="article"><meta property="og:url" content="https://www.ryc.one/2019-08-27-gitlab-login-access-denied/"><meta property="og:image" content="https://www.ryc.one/logo.png"><meta property="article:published_time" content="2019-08-27T15:27:04+10:00"><meta property="article:modified_time" content="2019-08-27T15:27:04+10:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.ryc.one/logo.png"><meta name=twitter:title content="Gitlab Login Access Denied"><meta name=twitter:description content="Error message showing as below while trying to login to on prem gitlab:
+
+        
+    gitlab access denied"><meta name=application-name content="River's Notes"><meta name=apple-mobile-web-app-title content="River's Notes"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/><link rel=prev href=https://www.ryc.one/2019-08-20-magic-date-in-golang-2006-01-02-150405/><link rel=next href=https://www.ryc.one/2019-09-25-get-you-a-free-ssl-cert/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gitlab Login Access Denied","inLanguage":"","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.ryc.one\/2019-08-27-gitlab-login-access-denied\/"},"image":{"@type":"ImageObject","url":"https:\/\/www.ryc.one\/cover.png","width":800,"height":600},"genre":"posts","keywords":"gitlab, access denied","wordcount":1327,"url":"https:\/\/www.ryc.one\/2019-08-27-gitlab-login-access-denied\/","datePublished":"2019-08-27T15:27:04+10:00","dateModified":"2019-08-27T15:27:04+10:00","publisher":{"@type":"Organization","name":"River Yang","logo":{"@type":"ImageObject","url":"https:\/\/www.ryc.one\/logo.png","width":127,"height":40}},"author":{"@type":"Person","name":"River Yang"},"description":""}</script></head><body><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="River's Notes"><span class=header-title-pre><i class="fas fa-hand-point-right"></i></span><span id=id-1 class=typeit></span></a></div><div class=menu><div class=menu-inner><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="River's Notes"><span class=header-title-pre><i class="fas fa-hand-point-right"></i></span><span id=id-2 class=typeit></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Gitlab Login Access Denied</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>River Yang</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-08-27>2019-08-27</time>&nbsp;
+<i class="fas fa-pencil-alt fa-fw"></i>about 1327 words&nbsp;
+<i class="far fa-clock fa-fw"></i>7 min&nbsp;</div></div><div class="details toc" id=toc-static><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#background>Background</a></li><li><a href=#diagnostic>Diagnostic</a><ul><li><ul><li><a href=#check-log-file-varloggitlabgitlab-railproductionlog-while-perform-login-action-again>check log file: <code>/var/log/gitlab/gitlab-rail/production.log</code> while perform login action again&mldr;</a></li><li><a href=#check-in-db-danger-please-make-sure-you-know-what-you-are-doing>check in db (danger, please make sure you know what you are doing)</a></li></ul></li></ul></li></ul></nav></div></div><div class=content id=content><p>Error message showing as below while trying to login to on prem gitlab:<figure><a class=lightgallery href=/img/post/20190827/gitlab_access_denied.png title="&amp;ldquo;gitlab access denied&amp;rdquo;" data-thumbnail=/img/post/20190827/gitlab_access_denied.png data-sub-html="<h2>gitlab access denied</h2><p>&amp;ldquo;gitlab access denied&amp;rdquo;</p>"><img class=lazyload src=/svg/loading/normal.min.svg data-src=/img/post/20190827/gitlab_access_denied.png data-srcset="/img/post/20190827/gitlab_access_denied.png, /img/post/20190827/gitlab_access_denied.png 1.5x, /img/post/20190827/gitlab_access_denied.png 2x" data-sizes=auto alt="&amp;ldquo;gitlab access denied&amp;rdquo;"></a><figcaption class=image-caption>gitlab access denied</figcaption></figure></p><h2 id=background>Background</h2><ul><li>Gitlab is using LDAP (Microsoft Active Directory) to authenticate users.</li><li>Confirmed with others users, only a small group of users are affected.</li><li>Keep digging information by asking around&mldr; previously, users were in 2 different ldap schema, admin used <code>gitlab-rake gitlab:ldap:rename_provider[ldapbackup,ldapmain]</code> to merge all old users to a single auth provider. But tested yesterday, login was fine.</li></ul><hr><h2 id=diagnostic>Diagnostic</h2><h4 id=check-log-file-varloggitlabgitlab-railproductionlog-while-perform-login-action-again>check log file: <code>/var/log/gitlab/gitlab-rail/production.log</code> while perform login action again&mldr;</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>tail -f /var/log/gitlab/gitlab-rail/production.log
+</code></pre></td></tr></table></div></div><p>Find following in the log file:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>Processing by Ldap::OmniauthCallbacksController#ldapmain as HTML
+  Parameters: <span class=o>{</span><span class=s2>&#34;utf8&#34;</span><span class=o>=</span>&gt;<span class=s2>&#34;✓&#34;</span>, <span class=s2>&#34;authenticity_token&#34;</span><span class=o>=</span>&gt;<span class=s2>&#34;[FILTERED]&#34;</span>, <span class=s2>&#34;username&#34;</span><span class=o>=</span>&gt;<span class=s2>&#34;riveryang&#34;</span>, <span class=s2>&#34;password&#34;</span><span class=o>=</span>&gt;<span class=s2>&#34;[FILTERED]&#34;</span><span class=o>}</span>
+LDAP search error: No Such Object
+LDAP search error: No Such Object
+Could not update DN <span class=k>for</span> riveryang <span class=o>(</span>451<span class=o>)</span>
+error messages: <span class=o>{</span>:extern_uid<span class=o>=</span>&gt;<span class=o>[</span><span class=s2>&#34;has already been taken&#34;</span><span class=o>]</span>, :user<span class=o>=</span>&gt;<span class=o>[</span><span class=s2>&#34;has already been taken&#34;</span><span class=o>]}</span>
+Redirected to https://gitlab.domain.works/users/sign_in
+</code></pre></td></tr></table></div></div><p>Seems like it cannot find my name <code>riveryang</code> by using DN, but when trying to update with new DN, error saying <code>extern_uid</code> and <code>user</code> has been taken</p><p>Searched around in Google, cannot find any useful information&mldr;</p><h4 id=check-in-db-danger-please-make-sure-you-know-what-you-are-doing>check in db (danger, please make sure you know what you are doing)</h4><p>I don&rsquo;t know what&rsquo;s gitlab&rsquo;s DB looks like, so decided to look around. lol~</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback># Entering DB console
+gitlab-rails dbconsole
+
+# list current DB - psql cli command
+gitlabhq_production=&gt; \l
+ gitlabhq_production | gitlab      | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ postgres            | gitlab-psql | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0           | gitlab-psql | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/&#34;gitlab-psql&#34;               +
+                     |             |          |             |             | &#34;gitlab-psql&#34;=CTc/&#34;gitlab-psql&#34;
+ template1           | gitlab-psql | UTF8     | en_US.UTF-8 | en_US.UTF-8 | &#34;gitlab-psql&#34;=CTc/&#34;gitlab-psql&#34;+
+                     |             |          |             |             | =c/&#34;gitlab-psql&#34;
+
+# switch databases
+gitlabhq_production=&gt; \c gitlabhq_production
+psql (10.9, server 10.7)
+You are now connected to database &#34;gitlabhq_production&#34; as user &#34;gitlab&#34;.
+
+# list all tables
+gitlabhq_production=&gt; \dt
+ public | abuse_reports                                   | table | gitlab
+ public | allowed_email_domains                           | table | gitlab
+ public | analytics_cycle_analytics_group_stages          | table | gitlab
+ public | analytics_cycle_analytics_project_stages        | table | gitlab
+ public | appearances                                     | table | gitlab
+ public | application_setting_terms                       | table | gitlab
+ public | application_settings                            | table | gitlab
+ public | approval_merge_request_rule_sources             | table | gitlab
+ public | approval_merge_request_rules                    | table | gitlab
+....
+</code></pre></td></tr></table></div></div><p>There is one table <code>users</code>, have a look what&rsquo;s inside:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; select * from users;
+  id  |                      email                      |                      encrypted_password                      | reset_password_token | reset_password_sent_at |    remember_created_at     | sign_in_count |     current_sign_in_at     |      last_sign_in_at       | current_sign_in_ip | last_sign_in_ip |         created_at         |         updated_at         |             name              | admin | projects_limit |            skype            |              linkedin               | twitter |                                                               bio                                                               | failed_attempts |         locked_at          |     username     | can_create_group | can_create_team |    state     | color_scheme_id |    password_expires_at     | created_by_id |  last_credential_check_at  |   avatar   |  confirmation_token  |        confirmed_at        |    confirmation_sent_at    |  unconfirmed_email  | hide_no_ssh_key |          website_url           | admin_email_unsubscribed_at |               notification_email                | hide_no_password | password_automatically_set |   location    |                     encrypted_otp_secret                     | encrypted_otp_secret_iv  | encrypted_otp_secret_salt | otp_required_for_login | otp_backup_codes |       public_email       | dashboard | project_view | consumed_timestep | layout | hide_project_limit | note |                           unlock_token                           | otp_grace_period_started_at | external |   incoming_email_token    |      organization      | auditor | require_two_factor_authentication_from_group | two_factor_grace_period | ghost | last_activity_on | notified_of_own_activity | preferred_language | email_opted_in | email_opted_in_ip | email_opted_in_source_id | email_opted_in_at | theme_id | accepted_term_id |      feed_token      | private_profile | roadmap_layout | include_private_contributions |       commit_email       | group_view | managing_group_id | bot_type
+------+-------------------------------------------------+--------------------------------------------------------------+----------------------+------------------------+----------------------------+---------------+----------------------------+----------------------------+--------------------+-----------------+----------------------------+----------------------------+-------------------------------+-------+----------------+-----------------------------+-------------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------+------------------+------------------+-----------------+--------------+-----------------+----------------------------+---------------+----------------------------+------------+----------------------+----------------------------+----------------------------+---------------------+-----------------+--------------------------------+-----------------------------+-------------------------------------------------+------------------+----------------------------+---------------+--------------------------------------------------------------+--------------------------+---------------------------+------------------------+------------------+--------------------------+-----------+--------------+-------------------+--------+--------------------+------+------------------------------------------------------------------+-----------------------------+----------+---------------------------+------------------------+---------+----------------------------------------------+-------------------------+-------+------------------+--------------------------+--------------------+----------------+-------------------+--------------------------+-------------------+----------+------------------+----------------------+-----------------+----------------+-------------------------------+--------------------------+------------+-------------------+----------
+</code></pre></td></tr></table></div></div><p>We can see all headers as object&rsquo;s properties above, but nothing mentioned about Ldap schema or otherthings.
+Also listed few users&rsquo;s status by <code>select * from user where name like 'riveryang'</code>, nothing interesting or very useful, but I found my id is <code>792</code>&mldr;</p><p>As I got my user_id, check other tables <code>user_synced_attributes_metadata</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; select * from user_synced_attributes_metadata;
+  id   | name_synced | email_synced | location_synced | user_id |  provider
+-------+-------------+--------------+-----------------+---------+------------
+    62 | f           | t            | f               |       4 |
+    66 | f           | t            | f               |      15 |
+  8335 | f           | t            | f               |     273 | ldapmain
+ 25250 | f           | t            | f               |     565 | ldapmain
+ 24843 | f           | t            | f               |     431 | ldapmain
+ 11527 | f           | t            | f               |     298 | ldapmain
+ ...
+</code></pre></td></tr></table></div></div><p>Interesting, at least we got some mapping information between user_id and provider <code>ldapmain</code>, check if mine is mapped:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; select * from user_synced_attributes_metadata where user_id = 792;
+  id   | name_synced | email_synced | location_synced | user_id | provider
+-------+-------------+--------------+-----------------+---------+----------
+</code></pre></td></tr></table></div></div><p>Uhmm, nothing&mldr; Probably that&rsquo;s why?</p><p>What if I manually add here? (I know I shouldn&rsquo;t do it, but just want to verify&mldr;)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; insert into 
+user_synced_attributes_metadata(name_synced, email_synced, location_synced, user_id, provider) 
+values 
+(&#39;f&#39;,&#39;t&#39;,&#39;f&#39;,792,&#39;ldapmain&#39;);
+</code></pre></td></tr></table></div></div><p>Try again with web portal: same error&mldr; and try to do a search again</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; select * from user_synced_attributes_metadata where user_id = 792;
+  id   | name_synced | email_synced | location_synced | user_id | provider
+-------+-------------+--------------+-----------------+---------+----------
+</code></pre></td></tr></table></div></div><p>IT&rsquo;S GONE!!! So, it&rsquo;s dynamically changed by some logic behind sense&mldr; Well. OK&mldr;</p><p>Keep digging&mldr; search for other tables that may relevent&mldr;</p><p>Found this <code>indentities</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; select * from identities;
+  id  |                                           extern_uid                                           | provider | user_id |         created_at         |         updated_at         | secondary_extern_uid | saml_provider_id
+------+------------------------------------------------------------------------------------------------+----------+---------+----------------------------+----------------------------+----------------------+------------------
+  133 | cn=user1,dc=users,dc=domain,dc=local                                                           | ldapmain |     138 | 2017-12-04 08:26:32.378928 | 2017-12-04 08:26:32.378928 |                      |
+  139 | cn=user2,dc=users,dc=domain,dc=local                                                           | ldapmain |     144 | 2017-12-11 05:39:45.465455 | 2017-12-11 05:39:45.465455 |                      |
+  141 | cn=user3,dc=users,dc=domain,dc=local                                                           | ldapmain |     146 | 2017-12-11 12:39:24.546617 | 2017-12-11 12:39:24.546617 |                      |
+   16 | cn=user4,ou=different OU,ou=Just Another OU,ou=all users,dc=domain,dc=local                    | ldapmain |      17 | 2016-10-24 09:15:17.363264 | 2019-04-15 01:30:03.462332 |                      |
+  122 | cn=user5,ou=team Alpha,ou=OU_yeah,ou=all users,dc=domain,dc=local                              | ldapmain |     127 | 2017-11-21 03:27:38.129106 | 2018-12-08 11:55:52.766379 |                      |
+</code></pre></td></tr></table></div></div><p>What about myself:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; select * from identities where user_id = 792;
+ id  |                            extern_uid                            | provider | user_id |         created_at         |         updated_at         | secondary_extern_uid | saml_provider_id
+-----+------------------------------------------------------------------+----------+---------+----------------------------+----------------------------+----------------------+------------------
+ 955 | cn=riveryang,ou=devops,ou=diffou,ou=all users,dc=domain,dc=local | ldapmain |     792 | 2019-08-10 03:36:41.685002 | 2019-08-25 08:42:53.122385 |                      |
+ 807 | cn=riveryang,ou=devops,ou=fakeou,ou=all users,dc=domain,dc=local | ldapmain |     792 | 2016-12-10 03:36:41.685002 | 2019-07-15 02:53:33.121285 |                      |
+(2 rows)
+</code></pre></td></tr></table></div></div><p>As above shown, one of them is previous DN that changed by HR (dont know why they change this&mldr;), anyway&mldr; it shouldn&rsquo;t be there&mldr; Let&rsquo;s get rid of it&mldr;</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; delete from identities where id = 955;
+DELETE 1
+</code></pre></td></tr></table></div></div><p>Login to Gitlab again, Whooooya~</p><p>But I cannot just do this one by one only when user complaints&mldr; So proactively search:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>gitlabhq_production=&gt; select user_id, count(*)
+from identities
+group by user_id 
+HAVING count(*)&gt;1;
+ user_id | count
+---------+-------
+      13 |     2
+      27 |     2
+      56 |     2
+      97 |     2
+     167 |     2
+     171 |     2
+     205 |     2
+     207 |     2
+     234 |     2
+     237 |     2
+     238 |     2
+     244 |     2
+     254 |     2
+     301 |     2
+     304 |     2
+     307 |     2
+     318 |     2
+     339 |     2
+     383 |     2
+     401 |     2
+     504 |     2
+     516 |     2
+     520 |     2
+     533 |     2
+     544 |     2
+     554 |     2
+     587 |     2
+     610 |     2
+     641 |     2
+     670 |     2
+     676 |     2
+     685 |     2
+     709 |     2
+     719 |     2
+     772 |     2
+     774 |     2
+     786 |     2
+     803 |     2
+     810 |     2
+     850 |     2
+     860 |     2
+     891 |     2
+(42 rows)
+</code></pre></td></tr></table></div></div><p>All above <code>user_id</code> records are experiencing same issue, so here is the homework for you:</p><p>HOW TO USE SQL TO SMARTLY REMOVE DUPLICATE RECORDS IN ANOTHER TABLE&mldr; lol~~</p><p>Have fun</p><p>River</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>The article was updated on 2019-08-27</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/2019-08-27-gitlab-login-access-denied/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/ data-title="Gitlab Login Access Denied" data-hashtags="gitlab,access denied"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/ data-hashtag=gitlab><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/ data-title="Gitlab Login Access Denied" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/ data-title="Gitlab Login Access Denied"><i class="fab fa-line fa-fw"></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/ data-title="Gitlab Login Access Denied"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/ data-title="Gitlab Login Access Denied" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/ data-title="Gitlab Login Access Denied" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://www.ryc.one/2019-08-27-gitlab-login-access-denied/ data-title="Gitlab Login Access Denied"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/gitlab/>gitlab</a>,&nbsp;<a href=/tags/access-denied/>access denied</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/2019-08-20-magic-date-in-golang-2006-01-02-150405/ class=prev rel=prev title="Magic Date in Golang: 2006-01-02 15:04:05"><i class="fas fa-angle-left fa-fw"></i>Magic Date in Golang: 2006-01-02 15:04:05</a>
+<a href=/2019-09-25-get-you-a-free-ssl-cert/ class=next rel=next title="Get You a Free SSL Cert">Get You a Free SSL Cert<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2017 - 2020</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>River Yang</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><style>.lg-toolbar .lg-icon::after{color:#999}</style><script type=text/javascript>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"River's Notes","id-2":"River's Notes"},"headerMode":{"desktop":"auto","mobile":"auto"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"_","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":1800,"speed":100}};</script><script type=text/javascript src="https://polyfill.io/v3/polyfill.min.js?features=html5shiv%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type=text/javascript src=https://rycone.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/object-fit-images/ofi.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/js/theme.min.js></script></body></html>

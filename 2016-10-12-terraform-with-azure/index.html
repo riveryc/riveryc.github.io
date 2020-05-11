@@ -1,0 +1,365 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Terraform with Azure - River's Notes</title><meta name=Description content="River's Notes"><meta property="og:title" content="Terraform with Azure"><meta property="og:description" content="Start playing Terraform …
+Get it downloaded & saved it to a local folder: C:\bin
+Put this path into local $PATH var by running:"><meta property="og:type" content="article"><meta property="og:url" content="https://www.ryc.one/2016-10-12-terraform-with-azure/"><meta property="og:image" content="https://www.ryc.one/logo.png"><meta property="article:published_time" content="2016-10-12T08:14:11+11:00"><meta property="article:modified_time" content="2016-10-12T08:14:11+11:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.ryc.one/logo.png"><meta name=twitter:title content="Terraform with Azure"><meta name=twitter:description content="Start playing Terraform …
+Get it downloaded & saved it to a local folder: C:\bin
+Put this path into local $PATH var by running:"><meta name=application-name content="River's Notes"><meta name=apple-mobile-web-app-title content="River's Notes"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.ryc.one/2016-10-12-terraform-with-azure/><link rel=prev href=https://www.ryc.one/2016-09-23-vagrant-with-centos/><link rel=next href=https://www.ryc.one/2016-12-11-send-email-via-powershell/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Terraform with Azure","inLanguage":"","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.ryc.one\/2016-10-12-terraform-with-azure\/"},"image":{"@type":"ImageObject","url":"https:\/\/www.ryc.one\/cover.png","width":800,"height":600},"genre":"posts","keywords":"Terraform, Azure","wordcount":1121,"url":"https:\/\/www.ryc.one\/2016-10-12-terraform-with-azure\/","datePublished":"2016-10-12T08:14:11+11:00","dateModified":"2016-10-12T08:14:11+11:00","publisher":{"@type":"Organization","name":"River Yang","logo":{"@type":"ImageObject","url":"https:\/\/www.ryc.one\/logo.png","width":127,"height":40}},"author":{"@type":"Person","name":"River Yang"},"description":""}</script></head><body><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="River's Notes"><span class=header-title-pre><i class="fas fa-hand-point-right"></i></span><span id=id-1 class=typeit></span></a></div><div class=menu><div class=menu-inner><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="River's Notes"><span class=header-title-pre><i class="fas fa-hand-point-right"></i></span><span id=id-2 class=typeit></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Terraform with Azure</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>River Yang</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i><time datetime=2016-10-12>2016-10-12</time>&nbsp;
+<i class="fas fa-pencil-alt fa-fw"></i>about 1121 words&nbsp;
+<i class="far fa-clock fa-fw"></i>6 min&nbsp;</div></div><div class="details toc" id=toc-static><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div></div><div class=content id=content><p>Start playing Terraform …</p><p>Get it downloaded & saved it to a local folder: C:\bin</p><p>Put this path into local $PATH var by running:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>$env:Path += &#34;;C:\bin&#34;
+</code></pre></td></tr></table></div></div><p>Restart a command line, type in <code>terraform</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>C:\Users\River&gt;terraform
+usage: terraform [--version] [--help] &lt;command&gt; [args]
+The available commands for execution are listed below.
+The most common, useful commands are shown first, followed by
+less common or more advanced commands. If you&#39;re just getting
+started with Terraform, stick with the common commands. For the
+other commands, please read the help and docs before usage.
+Common commands:
+    apply              Builds or changes infrastructure
+    destroy            Destroy Terraform-managed infrastructure
+    fmt                Rewrites config files to canonical format
+    get                Download and install modules for the configuration
+    graph              Create a visual graph of Terraform resources
+    import             Import existing infrastructure into Terraform
+    init               Initializes Terraform configuration from a module
+    output             Read an output from a state file
+    plan               Generate and show an execution plan
+    push               Upload this Terraform module to Atlas to run
+    refresh            Update local state file against real resources
+    remote             Configure remote state storage
+    show               Inspect Terraform state or plan
+    taint              Manually mark a resource for recreation
+    untaint            Manually unmark a resource as tainted
+    validate           Validates the Terraform files
+    version            Prints the Terraform version
+All other commands:
+    state              Advanced state management
+Once you can see above, &#34;Terraform&#34; is correctly installed.
+</code></pre></td></tr></table></div></div><p>Due to I only have Azure account, so I&rsquo;ll start playing with this&mldr;</p><ul><li>Create a terraform file <code>terraform.tf</code> with following content</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-hcl data-lang=hcl><span class=c1># Configure the Microsoft Azure Provider
+</span><span class=c1></span><span class=k>provider</span> <span class=err>“</span><span class=k>azurerm</span><span class=err>”</span> {
+<span class=n> subscription_id</span> <span class=o>=</span> <span class=err>“</span><span class=k>subscription_id</span><span class=err>”</span><span class=c1> ##Azure Account details, click the ‘subscription’, copy the guid id
+</span><span class=c1></span><span class=n> client_id</span> <span class=o>=</span> <span class=err>“</span><span class=k>client_id</span><span class=err>”</span><span class=c1> ##Refers to step 3.1
+</span><span class=c1></span><span class=n> client_secret</span> <span class=o>=</span> <span class=err>“</span><span class=k>client_secret</span><span class=err>”</span><span class=c1> ##Refers to step 3.2
+</span><span class=c1></span><span class=n> tenant_id</span> <span class=o>=</span> <span class=err>“</span><span class=k>tenant_id</span><span class=err>”</span><span class=c1> ##Refers to step 3.3
+</span><span class=c1></span>}
+</code></pre></td></tr></table></div></div><p>Getting above values from Azure need manual work, but once only.</p><ul><li>Login to Azure legacy portal: <a href=https://manage.windowsazure.com>https://manage.windowsazure.com</a></li><li>Getting ‘client_id’, ‘client_secret’ and ‘tenant_id’:<ul><li>client_id<ul><li>Select “Active Directory”</li><li>Select “Applications”</li><li>Select “Add” — “Add an application my organization is developing”</li><li><img class=lazyload src=/svg/loading/small.min.svg data-src=/img/post/20161012/terraform-with-azure-1.png data-srcset="/img/post/20161012/terraform-with-azure-1.png, /img/post/20161012/terraform-with-azure-1.png 1.5x, /img/post/20161012/terraform-with-azure-1.png 2x" data-sizes=auto alt=screenshot title=screenshot></li><li>Give it a good name “Terrabot”</li><li><img class=lazyload src=/svg/loading/small.min.svg data-src=/img/post/20161012/terraform-with-azure-2.png data-srcset="/img/post/20161012/terraform-with-azure-2.png, /img/post/20161012/terraform-with-azure-2.png 1.5x, /img/post/20161012/terraform-with-azure-2.png 2x" data-sizes=auto alt=screenshot title=screenshot></li><li>Input any 2 valid URLs, we are not going to consume them at all, so no need to be serious:</li><li><img class=lazyload src=/svg/loading/small.min.svg data-src=/img/post/20161012/terraform-with-azure-3.png data-srcset="/img/post/20161012/terraform-with-azure-3.png, /img/post/20161012/terraform-with-azure-3.png 1.5x, /img/post/20161012/terraform-with-azure-3.png 2x" data-sizes=auto alt=screenshot title=screenshot></li><li>You can get the client_id from here:</li><li><img class=lazyload src=/svg/loading/small.min.svg data-src=/img/post/20161012/terraform-with-azure-4.png data-srcset="/img/post/20161012/terraform-with-azure-4.png, /img/post/20161012/terraform-with-azure-4.png 1.5x, /img/post/20161012/terraform-with-azure-4.png 2x" data-sizes=auto alt=screenshot title=screenshot></li></ul></li><li>client_secret<ul><li>Scroll down to ‘keys’ secition, select duration</li><li><img class=lazyload src=/svg/loading/small.min.svg data-src=/img/post/20161012/terraform-with-azure-5.png data-srcset="/img/post/20161012/terraform-with-azure-5.png, /img/post/20161012/terraform-with-azure-5.png 1.5x, /img/post/20161012/terraform-with-azure-5.png 2x" data-sizes=auto alt=screenshot title=screenshot></li><li>Click “Save” at the bottom of the page, and you can see the key from the same location:</li><li><img class=lazyload src=/svg/loading/small.min.svg data-src=/img/post/20161012/terraform-with-azure-6.png data-srcset="/img/post/20161012/terraform-with-azure-6.png, /img/post/20161012/terraform-with-azure-6.png 1.5x, /img/post/20161012/terraform-with-azure-6.png 2x" data-sizes=auto alt=screenshot title=screenshot></li></ul></li><li>tenant_id<ul><li>Click “View Endpoints” at the bottom of the page:</li><li><img class=lazyload src=/svg/loading/small.min.svg data-src=/img/post/20161012/terraform-with-azure-7.png data-srcset="/img/post/20161012/terraform-with-azure-7.png, /img/post/20161012/terraform-with-azure-7.png 1.5x, /img/post/20161012/terraform-with-azure-7.png 2x" data-sizes=auto alt=screenshot title=screenshot></li><li>Find “OAUTH 2.0 AUTHORIZATION ENDPOINT”, and copy the key from the url, you can find it from here: <a href=https://login.microsoftonline.com/tenantid/oauth2/authorize>https://login.microsoftonline.com/tenantid/oauth2/authorize</a></li></ul></li></ul></li></ul><p>Start from a basic resource:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-hcl data-lang=hcl><span class=c1># Create a resource group
+</span><span class=c1></span><span class=k>resource</span> <span class=s2>&#34;azurerm_resource_group&#34; &#34;au_prod&#34;</span> {
+<span class=n>    name</span>     <span class=o>=</span> <span class=s2>&#34;au_prod&#34;</span>
+<span class=n>    location</span> <span class=o>=</span> <span class=s2>&#34;Australia East&#34;</span>
+}
+</code></pre></td></tr></table></div></div><p>Save the file, and run &ldquo;terraform plan&rdquo;:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>$ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but
+will not be persisted to local or remote state storage.
+The Terraform execution plan has been generated and is shown below.
+Resources are shown in alphabetical order for quick scanning. Green resources
+will be created (or destroyed and then created if an existing resource
+exists), yellow resources are being changed in-place, and red resources
+will be destroyed. Cyan entries are data sources to be read.
+Note: You didn&#39;t specify an &#34;-out&#34; parameter to save this plan, so when
+&#34;apply&#34; is called, Terraform can&#39;t guarantee this is what will execute.
++ azurerm_resource_group.au_prod
+    location: &#34;australiaeast&#34;
+    name:     &#34;au_prod&#34;
+Plan: 1 to add, 0 to change, 0 to destroy.
+</code></pre></td></tr></table></div></div><p>Plan shows what will <code>terraform</code> do if run with <code>apply</code> command.</p><p>We can do <code>terraform apply</code> to get the resource implemented.</p><p>Here is the simple resource description for 10 servers & multiple networks:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-hcl data-lang=hcl><span class=c1># Configure the Microsoft Azure Provider
+</span><span class=c1></span><span class=k>provider</span> <span class=s2>&#34;azurerm&#34;</span> {
+<span class=n>  subscription_id</span> <span class=o>=</span> <span class=s2>&#34;subscription_id&#34;</span>
+<span class=n>  client_id</span>       <span class=o>=</span> <span class=s2>&#34;client_id&#34;</span>
+<span class=n>  client_secret</span>   <span class=o>=</span> <span class=s2>&#34;client_secret&#34;</span>
+<span class=n>  tenant_id</span>       <span class=o>=</span> <span class=s2>&#34;tenant_id&#34;</span>
+}<span class=c1>
+</span><span class=c1># Create a resource group
+</span><span class=c1></span><span class=k>resource</span> <span class=s2>&#34;azurerm_resource_group&#34; &#34;au_prod&#34;</span> {
+<span class=n>    name</span>     <span class=o>=</span> <span class=s2>&#34;au_prod&#34;</span>
+<span class=n>    location</span> <span class=o>=</span> <span class=s2>&#34;Australia East&#34;</span>
+}
+<span class=k>resource</span> <span class=s2>&#34;azurerm_virtual_network&#34; &#34;au_network&#34;</span> {
+<span class=n>    name</span>                <span class=o>=</span> <span class=s2>&#34;au_network&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=n>    address_space</span>       <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;192.168.0.0/16&#34;</span><span class=p>]</span>
+<span class=n>    location</span>            <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.location}&#34;</span>
+<span class=n>    dns_servers</span>         <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;8.8.8.8&#34;, &#34;8.8.4.4&#34;</span><span class=p>]</span>
+}
+<span class=k>resource</span> <span class=s2>&#34;azurerm_subnet&#34; &#34;au_subnet0&#34;</span> {
+<span class=n>    name</span>                <span class=o>=</span> <span class=s2>&#34;au_subnet0&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=n>    virtual_network_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_virtual_network.au_network.name}&#34;</span>
+<span class=n>    address_prefix</span>      <span class=o>=</span> <span class=s2>&#34;192.168.0.0/24&#34;</span>
+}
+<span class=k>resource</span> <span class=s2>&#34;azurerm_subnet&#34; &#34;au_subnet1&#34;</span> {
+<span class=n>    name</span>                <span class=o>=</span> <span class=s2>&#34;au_subnet1&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=n>    virtual_network_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_virtual_network.au_network.name}&#34;</span>
+<span class=n>    address_prefix</span>      <span class=o>=</span> <span class=s2>&#34;192.168.1.0/24&#34;</span>
+}
+<span class=k>resource</span> <span class=s2>&#34;azurerm_subnet&#34; &#34;au_subnet2&#34;</span> {
+<span class=n>    name</span>                <span class=o>=</span> <span class=s2>&#34;au_subnet2&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=n>    virtual_network_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_virtual_network.au_network.name}&#34;</span>
+<span class=n>    address_prefix</span>      <span class=o>=</span> <span class=s2>&#34;192.168.2.0/24&#34;</span>
+}<span class=c1>
+</span><span class=c1>#Network Security group
+</span><span class=c1></span><span class=k>resource</span> <span class=s2>&#34;azurerm_network_security_group&#34; &#34;au_fw&#34;</span> {
+<span class=n>    name</span> <span class=o>=</span> <span class=s2>&#34;au_nsg_win&#34;</span>
+<span class=n>    location</span>            <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.location}&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=k>security_rule</span> {
+<span class=n>        name</span> <span class=o>=</span> <span class=s2>&#34;allow-rdp&#34;</span>
+<span class=n>        priority</span> <span class=o>=</span> <span class=m>1000</span>
+<span class=n>        direction</span> <span class=o>=</span> <span class=s2>&#34;Inbound&#34;</span>
+<span class=n>        access</span> <span class=o>=</span> <span class=s2>&#34;Allow&#34;</span>
+<span class=n>        protocol</span> <span class=o>=</span> <span class=s2>&#34;Tcp&#34;</span>
+<span class=n>        source_port_range</span> <span class=o>=</span> <span class=s2>&#34;*&#34;</span>
+<span class=n>        destination_port_range</span> <span class=o>=</span> <span class=s2>&#34;3389&#34;</span>
+<span class=n>        source_address_prefix</span> <span class=o>=</span> <span class=s2>&#34;*&#34;</span>
+<span class=n>        destination_address_prefix</span> <span class=o>=</span> <span class=s2>&#34;*&#34;</span>
+    }
+}<span class=c1>
+</span><span class=c1>#Storage Account
+</span><span class=c1></span><span class=k>resource</span> <span class=s2>&#34;azurerm_storage_account&#34; &#34;au_storage_acc&#34;</span> {
+<span class=n>    name</span>                <span class=o>=</span> <span class=s2>&#34;ultstorageriver&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=n>    location</span>            <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.location}&#34;</span>
+<span class=n>    account_type</span>        <span class=o>=</span> <span class=s2>&#34;Standard_LRS&#34;</span>
+}<span class=c1>
+</span><span class=c1>#Storage Container
+</span><span class=c1></span><span class=k>resource</span> <span class=s2>&#34;azurerm_storage_container&#34; &#34;au_storage_container&#34;</span> {
+<span class=n>    name</span> <span class=o>=</span> <span class=s2>&#34;vhds&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=n>    storage_account_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_storage_account.au_storage_acc.name}&#34;</span>
+<span class=n>    container_access_type</span> <span class=o>=</span> <span class=s2>&#34;private&#34;</span>
+<span class=n>    depends_on</span>          <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;azurerm_storage_account.au_storage_acc&#34;</span><span class=p>]</span>
+}<span class=c1>
+</span><span class=c1>#Repeat part
+</span><span class=c1></span><span class=k>variable</span> <span class=s2>&#34;count&#34;</span> {
+<span class=n>  default</span> <span class=o>=</span> <span class=m>10</span>
+}<span class=c1>
+</span><span class=c1>#public IP
+</span><span class=c1></span><span class=k>resource</span> <span class=s2>&#34;azurerm_public_ip&#34; &#34;au_public_ip&#34;</span> {
+<span class=n>    count</span>               <span class=o>=</span> <span class=s2>&#34;${var.count}&#34;</span>
+<span class=n>    name</span>                <span class=o>=</span> <span class=s2>&#34;${format(&#34;pip%02d&#34;, count.index + 1)}&#34;</span>
+<span class=n>    location</span>            <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.location}&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=n>    public_ip_address_allocation</span> <span class=o>=</span> <span class=s2>&#34;dynamic&#34;</span>
+}<span class=c1>
+</span><span class=c1>#Network Interface
+</span><span class=c1></span><span class=k>resource</span> <span class=s2>&#34;azurerm_network_interface&#34; &#34;au_netinterface&#34;</span> {
+<span class=n>    count</span>               <span class=o>=</span> <span class=s2>&#34;${var.count}&#34;</span>
+<span class=n>    name</span>                <span class=o>=</span> <span class=s2>&#34;${format(&#34;nic%02d&#34;, count.index + 1)}&#34;</span>
+<span class=n>    location</span>            <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.location}&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=k>ip_configuration</span> {
+<span class=n>        name</span>            <span class=o>=</span> <span class=s2>&#34;ipconfig1&#34;</span>
+<span class=n>        subnet_id</span>       <span class=o>=</span> <span class=s2>&#34;${azurerm_subnet.au_subnet2.id}&#34;</span>
+<span class=n>        private_ip_address_allocation</span> <span class=o>=</span> <span class=s2>&#34;dynamic&#34;</span>
+<span class=n>        public_ip_address_id</span> <span class=o>=</span> <span class=s2>&#34;${element(azurerm_public_ip.au_public_ip.*.id, count.index)}&#34;</span>
+    }
+}<span class=c1>
+</span><span class=c1>#Create VM
+</span><span class=c1></span><span class=k>resource</span> <span class=s2>&#34;azurerm_virtual_machine&#34; &#34;au_vms&#34;</span> {
+<span class=n>    count</span>               <span class=o>=</span> <span class=s2>&#34;${var.count}&#34;</span>
+<span class=n>    name</span>                <span class=o>=</span> <span class=s2>&#34;${format(&#34;vm%02d&#34;, count.index + 1)}&#34;</span>
+<span class=n>    location</span>            <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.location}&#34;</span>
+<span class=n>    resource_group_name</span> <span class=o>=</span> <span class=s2>&#34;${azurerm_resource_group.au_prod.name}&#34;</span>
+<span class=n>    network_interface_ids</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;${element(azurerm_network_interface.au_netinterface.*.id, count.index)}&#34;</span><span class=p>]</span>
+<span class=n>    vm_size</span>             <span class=o>=</span> <span class=s2>&#34;Basic_A0&#34;</span>
+<span class=k>storage_image_reference</span> {
+<span class=n>        publisher</span>       <span class=o>=</span> <span class=s2>&#34;MicrosoftWindowsServer&#34;</span>
+<span class=n>        offer</span>           <span class=o>=</span> <span class=s2>&#34;WindowsServer&#34;</span>
+<span class=n>        sku</span>             <span class=o>=</span> <span class=s2>&#34;2012-R2-Datacenter&#34;</span>
+<span class=n>        version</span>         <span class=o>=</span> <span class=s2>&#34;latest&#34;</span>
+    }
+<span class=k>storage_os_disk</span> {
+<span class=n>        name</span>            <span class=o>=</span> <span class=s2>&#34;${format(&#34;os_audisk%02d&#34;, count.index + 1)}&#34;</span>
+<span class=n>        vhd_uri</span>         <span class=o>=</span> <span class=s2>&#34;${azurerm_storage_account.au_storage_acc.primary_blob_endpoint}${azurerm_storage_container.au_storage_container.name}/${format(&#34;os_audisk%02d.vhd&#34;, count.index + 1)}&#34;</span>
+<span class=n>        caching</span>         <span class=o>=</span> <span class=s2>&#34;ReadWrite&#34;</span>
+<span class=n>        create_option</span>   <span class=o>=</span> <span class=s2>&#34;FromImage&#34;</span>
+    }
+<span class=k>os_profile</span> {
+<span class=n>        computer_name</span>   <span class=o>=</span> <span class=s2>&#34;${format(&#34;vm%02d&#34;, count.index + 1)}&#34;</span>
+<span class=n>        admin_username</span>  <span class=o>=</span> <span class=s2>&#34;river&#34;</span>
+<span class=n>        admin_password</span>  <span class=o>=</span> <span class=s2>&#34;pAssw0rd!@&#34;</span>
+    }
+<span class=n>    depends_on</span>          <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;azurerm_network_interface.au_netinterface&#34;, &#34;azurerm_network_security_group.au_fw&#34;, &#34;azurerm_storage_container.au_storage_container&#34;</span><span class=p>]</span>
+}
+</code></pre></td></tr></table></div></div><p>Have fun~</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>The article was updated on 2016-10-12</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/2016-10-12-terraform-with-azure/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/ data-title="Terraform with Azure" data-hashtags=Terraform,Azure><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/ data-hashtag=Terraform><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/ data-title="Terraform with Azure" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/ data-title="Terraform with Azure"><i class="fab fa-line fa-fw"></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/ data-title="Terraform with Azure"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/ data-title="Terraform with Azure" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/ data-title="Terraform with Azure" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://www.ryc.one/2016-10-12-terraform-with-azure/ data-title="Terraform with Azure"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/terraform/>Terraform</a>,&nbsp;<a href=/tags/azure/>Azure</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/2016-09-23-vagrant-with-centos/ class=prev rel=prev title="Vagrant with CentOS"><i class="fas fa-angle-left fa-fw"></i>Vagrant with CentOS</a>
+<a href=/2016-12-11-send-email-via-powershell/ class=next rel=next title="Send Email via PowerShell">Send Email via PowerShell<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2017 - 2020</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>River Yang</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><style>.lg-toolbar .lg-icon::after{color:#999}</style><script type=text/javascript>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"River's Notes","id-2":"River's Notes"},"headerMode":{"desktop":"auto","mobile":"auto"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"_","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":1800,"speed":100}};</script><script type=text/javascript src="https://polyfill.io/v3/polyfill.min.js?features=html5shiv%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type=text/javascript src=https://rycone.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/object-fit-images/ofi.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/js/theme.min.js></script></body></html>
